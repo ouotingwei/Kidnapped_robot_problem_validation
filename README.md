@@ -7,16 +7,20 @@ Ubuntu 20.04
 
 ROS noetic
 
-Installation
-Dependencies:
-
+Installation Dependencies:
+```
 sudo apt-get install ros-noetic-sophus ros-noetic-joy libusb-dev libftdi-dev ros-noetic-base-local-planner ros-noetic-move-base-msgs
+```
 
-mkdir ~/catkin_ws/src -p
-cd ~/catkin_ws/src
-git clone https://github.com/hanruihua/Turtlebot_on_noetic.git
-cd Turtlebot_on_noetic
-sh turtlebot_noetic.sh
+download the pkg:
+```
 cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
+```
+
+test:
+```
+roslaunch turtlebot_gazebo turtlebot_world.launch
+roslaunch turtlebot_teleop keyboard_teleop.launch
+```
