@@ -1,15 +1,14 @@
-The Turtlebot2 packages installation on ROS noetic
+The Turtlebot3 packages installation on ROS noetic
 
-reference: turtlebot2-on-noetic, Turtlebot2-On-Melodic
+References: https://www.ncnynl.com/archives/201702/1398.html
 
-Environment
-Ubuntu 20.04
-
-ROS noetic
+Environment: Ubuntu 20.04 / ROS noetic
 
 Installation Dependencies:
 ```
-sudo apt-get install ros-noetic-sophus ros-noetic-joy libusb-dev libftdi-dev ros-noetic-base-local-planner ros-noetic-move-base-msgs
+sudo apt-get install ros-noetic-turtlebot3-teleop
+sudo apt-get install ros-noetic-turtlebot3-description
+sudo apt-get install ros-noetic-turtlebot3-msgs
 ```
 
 download the pkg:
@@ -20,7 +19,14 @@ source devel/setup.bash
 ```
 
 test:
+
 ```
-roslaunch turtlebot_gazebo turtlebot_world.launch
-roslaunch turtlebot_teleop keyboard_teleop.launch
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+```
+
+use another terminal:
+```
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
