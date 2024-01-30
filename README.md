@@ -11,15 +11,7 @@ sudo apt-get install ros-noetic-turtlebot3-description
 sudo apt-get install ros-noetic-turtlebot3-msgs
 ```
 
-download the pkg:
-```
-cd ~/catkin_ws
-catkin_make
-source devel/setup.bash
-```
-
 test:
-
 ```
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
@@ -29,4 +21,14 @@ use another terminal:
 ```
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+```
+
+gmapping:
+'''
+roslaunch gmapping_ros slam_gmapping.launch
+'''
+
+save the map:
+```
+rosrun map_server map_saver -f "MAP_NAME"
 ```
