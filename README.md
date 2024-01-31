@@ -11,7 +11,7 @@ sudo apt-get install ros-noetic-turtlebot3-description
 sudo apt-get install ros-noetic-turtlebot3-msgs
 ```
 
-test:
+## test:
 ```
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
@@ -22,13 +22,17 @@ use another terminal:
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
+## create a new map
+    gmapping:
+    '''
+    roslaunch gmapping_ros slam_gmapping.launch
+    '''
 
-gmapping:
-'''
-roslaunch gmapping_ros slam_gmapping.launch
-'''
-
-save the map:
+    save the map:
+    ```
+    rosrun map_server map_saver -f "MAP_NAME"
+    ```
+## launch amcl
 ```
-rosrun map_server map_saver -f "MAP_NAME"
+roslaunch turtlebot3_navigation amcl.launch 
 ```
