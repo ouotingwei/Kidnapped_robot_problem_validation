@@ -23,6 +23,10 @@ export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
 ## create a new map
+    use another terminal:
+    ```
+    rosrun tf static_transform_publisher 0.20 0 0 0 0 0 base_footprint scan 50
+    ```
     gmapping:
     '''
     roslaunch gmapping_ros slam_gmapping.launch
