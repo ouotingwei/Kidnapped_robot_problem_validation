@@ -104,7 +104,7 @@
     <sensor type="ray" name="lds_lfcd_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>$(arg laser_visual)</visualize>
-      <update_rate>50</update_rate>
+      <update_rate>5</update_rate>
       <ray>
         <scan>
           <horizontal>
@@ -126,7 +126,7 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
-        <topicName>scan</topicName>
+        <topicName>base_scan</topicName>
         <frameName>scan</frameName>
       </plugin>
     </sensor>
