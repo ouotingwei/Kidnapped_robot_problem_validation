@@ -6,7 +6,7 @@
   <arg name="initial_pose_a" default="0.0"/>
 
   <!-- Map -->
-  <node pkg="map_server" type="map_server" name="map_server" args="/home/wei/kidnapped_simulation/map/office/office.yaml"/>
+  <node pkg="map_server" type="map_server" name="map_server" args="/home/wei/kidnapped_simulation/map/bigroom/bigroom.yaml"/>
     <param name="frame_id" value="/map"/>
 
 

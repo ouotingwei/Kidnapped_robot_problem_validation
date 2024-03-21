@@ -45,7 +45,7 @@ roslaunch turtlebot3_navigation amcl.launch
 Check out the plugin in your catkin_ws and build it with catkin_make. To include the plugin, add the following line in between the <world> </world> tags of your Gazebo world file:
 ```
 <plugin name='gazebo_occupancy_map' filename='libgazebo_2Dmap_plugin.so'>
-    <map_resolution>0.1</map_resolution> <!-- in meters, optional, default 0.1 -->
+    <map_resolution>0.05</map_resolution> <!-- in meters, optional, default 0.1 -->
     <map_height>0.3</map_height>         <!-- in meters, optional, default 0.3 -->
     <map_size_x>10</map_size_x>          <!-- in meters, optional, default 10 -->
     <map_size_y>10</map_size_y>          <!-- in meters, optional, default 10 -->
@@ -64,3 +64,18 @@ You can use the map_saver node from the map_server package inside ros navigation
 ```
 rosrun map_server map_saver -f <mapname> /map:=/map2d
 ```
+
+### launch the pedestrain
+```
+roslaunch pedsim_simulator gym_crowd_environment.launch 
+```
+
+### sent service
+```
+rosservice call /pedsim_simulator/unpause_simulation "{}"
+```
+
+### step
+1. lauch robot
+2. launch pedistrain
+3. sent service
